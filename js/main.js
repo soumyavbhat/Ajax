@@ -5,45 +5,9 @@ var F55 = document.querySelector("#F55"),
     R58 = document.querySelector("#R58"),
     modelName = document.querySelector(".modelName"),
     priceInfo = document.querySelector(".priceInfo"),
-    modelDetails = document.querySelector(".modelDetails");
+    modelDetails = document.querySelector(".modelDetails"),
+    theImages = document.querySelectorAll('.data-ref');
 
-F55.addEventListener('click', opacity1, false);
-F56.addEventListener('click', opacity2, false);
-R58.addEventListener('click', opacity3, false);
-
-
-function opacity1()
-{
-  F55.classList.remove("active");
-  F56.classList.remove("active");
-  R58.classList.remove("active");
-
-  F55.classList.add("active");
-  F56.classList.add("nonActive");
-  R58.classList.add("nonActive");
-}
-
-function opacity2()
-{
-  F55.classList.remove("active");
-  F56.classList.remove("active");
-  R58.classList.remove("active");
-
-  F55.classList.add("nonActive");
-  F56.classList.add("active");
-  R58.classList.add("nonActive");
-}
-
-function opacity3()
-{
-  F55.classList.remove("active");
-  F56.classList.remove("active");
-  R58.classList.remove("active");
-
-  F55.classList.add("nonActive");
-  F56.classList.add("nonActive");
-  R58.classList.add("active");
-}
 
 function changeDetails(){
   let objectIndex = carData[this.id];
@@ -53,11 +17,43 @@ function changeDetails(){
   priceInfo.firstChild.nodeValue = objectIndex.price;
   modelDetails.firstChild.nodeValue = objectIndex.text;
 
+if(this.id=='F55')
+{
+  F55.classList.remove("active");
+    F56.classList.remove("active");
+    R58.classList.remove("active");
+
+    F55.classList.add("active");
+    F56.classList.add("nonActive");
+    R58.classList.add("nonActive");
+}
+else if(this.id=='F56')
+{
+  F55.classList.remove("active");
+    F56.classList.remove("active");
+    R58.classList.remove("active");
+
+    F55.classList.add("nonActive");
+    F56.classList.add("active");
+    R58.classList.add("nonActive");
 }
 
-F55.addEventListener('click', changeDetails, false);
-F56.addEventListener('click', changeDetails, false);
-R58.addEventListener('click', changeDetails, false);
+else if(this.id=='R58')
+{
+  F55.classList.remove("active");
+    F56.classList.remove("active");
+    R58.classList.remove("active");
+
+    F55.classList.add("nonActive");
+    F56.classList.add("nonActive");
+    R58.classList.add("active");
+}
+
+}
+
+theImages.forEach(function(image, index){
+        image.addEventListener('click', changeDetails, false);
+      });
 
 changeDetails.call(document.querySelector("#F55"));
 
