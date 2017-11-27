@@ -12,42 +12,16 @@ var F55 = document.querySelector("#F55"),
 function changeDetails(){
   let objectIndex = carData[this.id];
   console.log("works");
+for(var i=0; i<theImages.length; i++)
+{
+  theImages[i].classList.add("nonActive");
+}
+this.classList.remove("nonActive");
 
   modelName.firstChild.nodeValue = objectIndex.headline;
   priceInfo.firstChild.nodeValue = objectIndex.price;
   modelDetails.firstChild.nodeValue = objectIndex.text;
 
-if(this.id=='F55')
-{
-  F55.classList.remove("active");
-    F56.classList.remove("active");
-    R58.classList.remove("active");
-
-    F55.classList.add("active");
-    F56.classList.add("nonActive");
-    R58.classList.add("nonActive");
-}
-else if(this.id=='F56')
-{
-  F55.classList.remove("active");
-    F56.classList.remove("active");
-    R58.classList.remove("active");
-
-    F55.classList.add("nonActive");
-    F56.classList.add("active");
-    R58.classList.add("nonActive");
-}
-
-else if(this.id=='R58')
-{
-  F55.classList.remove("active");
-    F56.classList.remove("active");
-    R58.classList.remove("active");
-
-    F55.classList.add("nonActive");
-    F56.classList.add("nonActive");
-    R58.classList.add("active");
-}
 
 }
 
