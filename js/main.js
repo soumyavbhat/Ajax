@@ -12,15 +12,26 @@ const httpRequest = new XMLHttpRequest();
 
 
     function getCarData(){
-if(!httpRequest)
-{
-  alert("Browser old");
-  return false;
-}
+      const url = './includes/functions.php?carModel=' + this.id;
 
-httpRequest.onreadystatechange = processRequest;
-httpRequest.open('GET', './includes/functions.php?carModel=' + this.id);
-httpRequest.send();
+      // the fetch api uses new javascript promise api
+      fetch(url)
+      .then((resp)=>resp.json())
+      .then((data)=>{processResult(data);})
+      .catch(function(error)
+      {
+        console.log(error);
+      });
+
+// if(!httpRequest)
+// {
+//   alert("Browser old");
+//   return false;
+// }
+//
+// httpRequest.onreadystatechange = processRequest;
+// httpRequest.open('GET', './includes/functions.php?carModel=' + this.id);
+// httpRequest.send();
     }
 
     function processRequest() {
