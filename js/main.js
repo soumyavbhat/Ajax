@@ -26,7 +26,7 @@ httpRequest.send();
     function processRequest() {
       let reqIndicator = document.querySelector('.request-state');
       reqIndicator.textContent = httpRequest.readyState;
-      debugger;
+      // debugger;
 
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
         if (httpRequest.status === 200) { // 200 means everything is awesome
