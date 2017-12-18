@@ -8,7 +8,7 @@
   mysqli_set_charset($conn, 'utf8');
 
   if (!$conn) {
-    echo "something broke";
+    // echo "something broke";
     exit;
   }
 

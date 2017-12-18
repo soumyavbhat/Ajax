@@ -43,12 +43,18 @@ fetchVideoThumbs()
   .then((data) => {video.loadVideoThumbs(data);})
   .catch(function(error)
   {
-    console.log(error);
+    // console.log(error);
   });
 },
 
 loadVideoThumbs(data){
-  debugger;
+  // debugger;
+  let thumbHolder = document.querySelector('.video-thumbs');
+
+  let docFrag = `<li class="vid-thumb" role="button" data-videopath="${thumb.path}">
+    <img src="" alt="mini commercial" class="responsive">
+  </li>`
+
 },
 
   init(){

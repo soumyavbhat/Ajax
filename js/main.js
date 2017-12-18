@@ -27,7 +27,7 @@ const httpRequest = new XMLHttpRequest();
     })
       .catch(function(error)
       {
-        console.log(error);
+        // console.log(error);
       });
 
 // if(!httpRequest)
