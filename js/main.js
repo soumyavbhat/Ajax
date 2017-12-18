@@ -75,6 +75,6 @@ theImages.forEach(function(image, index){
         image.addEventListener('click', getCarData, false);
       });
 
-// getCarData.call(document.querySelector("#F55"));
+getCarData.call(document.querySelector("#F55"));
 
 })();

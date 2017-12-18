@@ -58,6 +58,23 @@ data.forEach(thumb =>{
   thumbHolder.innerHTML += docFrag;
 
 });
+
+  thumbHolder.querySelectorAll('li').forEach((thumb) => thumb.addEventListener('click', video.loadNewVideo));
+},
+
+loadNewVideo(){
+  // debugger;
+
+  let videoPath = "video/" + this.dataset.videopath;
+
+  video.videoPlayer.src = videoPath;
+  video.videoPlayer.load();
+  video.videoPlayer.play();
+
+  let overlay = document.querySelector('.vid-overlay');
+  overlay.classList.remove('show-overlay');
+
+  video.volOn();
 },
 
   init(){
